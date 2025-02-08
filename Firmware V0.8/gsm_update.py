@@ -77,7 +77,7 @@ def send_request(url):
 def getsize(response):
     # Search for the response code and size
     match = re.search(r'HTTPACTION: \d+,200,(\d+)', response)
-    
+    global retry
     if match:
         # Extract the size from the match and convert it to an integer
         size = int(match.group(1))
